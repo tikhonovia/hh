@@ -1,0 +1,33 @@
+<div class="mblBackground">
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<div data-dojo-type="dojox/mobile/Heading"
+			 data-dojo-props="fixed: 'top'">
+			<button data-dojo-type="dojox/mobile/ToolBarButton"
+					data-dojo-attach-point="refUsersBackButton"
+					data-dojo-props="arrow: 'left', target: 'menu', transitionDir: -1, moveTo: 'menu'"
+					style="position: absolute; left: 0"
+					class="backButton">${nls.back}</button>
+		</div>
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<span class="logo"><img class="logo-small" src="images/aplana.png" /></span>
+			<span class="heading-title">${nls.title}</span>
+		</div>
+		<table id="sickMenu-messages">
+			<tr>
+				<td>
+					<div class="place-messages"><!-- test --></div>
+					<div class="place-errors"><!-- test --></div>
+				</td>
+			</tr>
+		</table>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuAddSick" data-dojo-props="target: 'sickDetail'" label="${nls.sick.add}" description="${nls.sick.addDescription}"></li>
+	    </ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/SicksListItem" label="${nls.sick.openInform}" data-dojo-attach-point="openInform" backView="sickMenu"></li>
+		</ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/SicksListItem" label="${nls.sick.my}" data-dojo-attach-point="my" withUser="false" backView="sickMenu"></li>
+		</ul>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+define({
+	root: {
+		title: "Vacation details",
+		edit: "Edit",
+		cancel: "Cancel",
+		ok: "Ok",
+		back: "Back",
+		progress: {base: "Please wait...", reject:"Please wait...", agreement:"Please wait...", users:"Please wait...", save:"Please wait...", toAgreement:"Please wait..."},
+		background: "Background",
+		common: "Common",
+		agreement: "Approve",
+		balanceDays: "Vacation balance",
+		experience: "Experience",
+		id: "ID",
+		type: {label:"Type",
+			1: "Annual",
+			2: "Unpaid"},
+		user: "Employee",
+		startDate: "Start date",
+		endDate: "End date",
+		createAppointment: "Create Outlook appointment",
+		workDays: "Work days",
+		agreement: {title: "Agreements", approved: "Approved", rejected: "Rejected"},
+		selectDate: "Select date",
+		selectAggr: "Select agreement",
+		search: "Search",
+		comment: "Comment",
+		enterComment: "Enter comment",
+		history: "History",
+		button: {agreement: "Agreement", reject: "Reject", save: "Save", toAgreement: "To agreement", register: "Register"}
+	},
+	ru: true
+});

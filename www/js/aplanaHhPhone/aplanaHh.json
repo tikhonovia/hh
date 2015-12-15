@@ -1,0 +1,195 @@
+{
+	"id": "aplanaHh",
+	"dependencies": [
+		"dojo/store/Observable",
+		"dojox/mobile/Heading",
+		"dojox/mobile/ScrollableView",
+		"dojox/mobile/View",
+		"dojox/mobile/ListItem",
+		"dojox/mobile/ToolBarButton",
+		"dojo/store/Memory",
+		"dojox/mobile/bookmarkable",
+		"dojo/data/ItemFileReadStore",
+		"aplanaHh/mobile/EdgeToEdgeStoreList",
+		"aplanaHh/mobile/RoundRectStoreList",
+		"aplanaHh/mobile/VacationStoreList",
+		"aplanaHh/mobile/ManagerListItem",
+		"aplanaHh/mobile/NotificationListItem",
+		"aplanaHh/mobile/VacationsListItem",
+		"aplanaHh/mobile/HistoryListItem",
+		"aplanaHh/mobile/SicksListItem",
+		"aplanaHh/mobile/DescriptionListItem",
+		"dojox/mobile/Opener",
+		"dojox/mobile/DatePicker"
+	],
+	"controllers": [
+		"dojox/app/controllers/Load",
+		"dojox/app/controllers/Transition",
+		"dojox/app/controllers/Layout"
+	],
+	"stores": {
+		"users": {
+			"type": "dojo/store/Memory",
+			"observable": true,
+			"params": {
+				"data": []
+			}
+		},
+		"agreements": {
+			"type": "dojo/store/Memory",
+			"observable": true,
+			"params": {
+				"data": []
+			}
+		},
+		"vacationMy": {
+			"type": "dojo/store/Memory",
+			"observable": true,
+			"params": {
+				"data": []
+			}
+		},
+		"vacationToAgreement": {
+			"type": "dojo/store/Memory",
+			"observable": true,
+			"params": {
+				"data": []
+			}
+		}
+	},
+	"nls": "aplanaHhPhone/nls/aplanaHh",
+	"serverUrlProd": "https://hh.aplana.com/hh/",
+	"serverUrl": "https://hh.aplana.com/test/",
+	"serverUrl2": "http://localhost:8080/HH/",
+	"defaultTransition": "slide",
+	"defaultView": "menu",
+	"views": {
+		"login": {
+			"controller": "aplanaHhPhone/views/login",
+			"template": "aplanaHhPhone/views/login.html",
+			"nls": "aplanaHhPhone/nls/login",
+			"uri": "j_spring_security_check"
+		},
+		"menu": {
+			"controller": "aplanaHhPhone/views/menu",
+			"template": "aplanaHhPhone/views/menu.html",
+			"nls": "aplanaHhPhone/nls/menu",
+			"uri": "login/ajaxSuccess",
+			"logoffUri": "j_spring_security_logout"
+		},
+		"vacationMenu": {
+			"controller": "aplanaHhPhone/views/vacationMenu",
+			"template": "aplanaHhPhone/views/vacationMenu.html",
+			"nls": "aplanaHhPhone/nls/vacationMenu",
+			"deleteUri": "vacation/delete",
+			"myApprovedUri": "vacation/list?showVacations=me&max=-7&status.id=3",
+			"myForApproveUri": "vacation/list?showVacations=me&max=-7&status.id=2",
+			"myDraftUri": "vacation/list?showVacations=me&max=-7&status.id=1",
+			"myRejectedUri": "vacation/list?showVacations=me&max=-7&status.id=4",
+			"forApproveUri": "vacation/list?showVacations=toApprove&max=-7",
+			"cache": "0",
+			"cacheKey": "vacation"
+		},
+		"sickMenu": {
+			"controller": "aplanaHhPhone/views/sickMenu",
+			"template": "aplanaHhPhone/views/sickMenu.html",
+			"nls": "aplanaHhPhone/nls/sickMenu",
+			"openInformUri": "sick/list?showSicks=informMe&max=-7&status.id=1",
+			"myUri": "sick/list?showSicks=me&max=-7",
+			"cache": "0",
+			"cacheKey": "sick"
+		},
+		"refUsers": {
+			"controller": "aplanaHhPhone/views/refUsers",
+			"template": "aplanaHhPhone/views/refUsers.html",
+			"nls": "aplanaHhPhone/nls/refUsers",
+			"uri": "userInfo/getList?max=-7",
+			"cache": "60",
+			"cacheKey": "user"
+		},
+		"refUserDetail": {
+			"controller": "aplanaHhPhone/views/refUserDetail",
+			"template": "aplanaHhPhone/views/refUserDetail.html",
+			"nls": "aplanaHhPhone/nls/refUserDetail",
+			"uri": "userInfo/getUserInfo",
+			"cacheKey": "user"
+		},
+		"vacationCalc": {
+			"controller": "aplanaHhPhone/views/vacationCalc",
+			"template": "aplanaHhPhone/views/vacationCalc.html",
+			"nls": "aplanaHhPhone/nls/vacationCalc",
+			"uri": "vacation/processCalc",
+			"usersUri": "userInfo/getList?max=-7",
+			"cache": "60",
+			"cacheKey": "user"
+		},
+		"vacationMy": {
+			"controller": "aplanaHhPhone/views/vacationMy",
+			"template": "aplanaHhPhone/views/vacationMy.html",
+			"nls": "aplanaHhPhone/nls/vacationMy",
+			"uri": "vacation/list?showVacations=me&max=-7",
+			"cache": "0",
+			"cacheKey": "vacation"
+		},
+		"vacationToAgreement": {
+			"controller": "aplanaHhPhone/views/vacationToAgreement",
+			"template": "aplanaHhPhone/views/vacationToAgreement.html",
+			"nls": "aplanaHhPhone/nls/vacationToAgreement",
+			"uri": "vacation/list?showVacations=toApprove&max=-7",
+			"cache": "0",
+			"cacheKey": "vacation"
+		},
+		"vacationDetail": {
+			"controller": "aplanaHhPhone/views/vacationDetail",
+			"template": "aplanaHhPhone/views/vacationDetail.html",
+			"nls": "aplanaHhPhone/nls/vacationDetail",
+			"uri": "vacation/get",
+			"agreementUri": "vacation/agreement",
+			"rejectUri": "vacation/reject",
+			"saveUri": "vacation/save",
+			"toAgreementUri": "vacation/toAgreement",
+			"cacheKey": "vacation",
+			"aggrsUri": "userInfo/getAggreements?max=-7",
+			"aggrsCache": "60",
+			"aggrsCacheKey": "user",
+			"calcWorkdaysUri": "vacation/calcWorkdays"
+		},
+		"sickDetail": {
+			"controller": "aplanaHhPhone/views/sickDetail",
+			"template": "aplanaHhPhone/views/sickDetail.html",
+			"nls": "aplanaHhPhone/nls/sickDetail",
+			"uri": "sick/get",
+			"closeUri": "sick/close",
+			"saveUri": "sick/save",
+			"cacheKey": "sick",
+			"informsUri": "userInfo/getAggreements?max=-7",
+			"informsCache": "60",
+			"informsCacheKey": "user"
+		}
+	},
+	"constants":{
+		"vacation": {
+			"status": {
+				"draft": 1, "for_approve": 2, "approved": 3, "rejected": 4, "registered": 5, "fulfilled": 6, "canceled": 7
+			}
+		},
+		"currentUser": {
+			"userInfoUri": "userInfo/getUserInfo",
+			"userInfoCache": "0",
+			"userInfoCacheKey": "user"
+		}
+	},
+	"user": {},
+	"has": {
+		"html5history": {
+			"controllers": [
+				"dojox/app/controllers/History"
+			]
+		},
+		"!html5history": {
+			"controllers": [
+				"dojox/app/controllers/HistoryHash"
+			]
+		}
+	}
+}

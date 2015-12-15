@@ -1,0 +1,88 @@
+<div>
+	<div data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="backButton"
+				data-dojo-props="arrow: 'left', target: 'vacationMenu'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.back}</button>
+		${nls.title}
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="calcButton"
+				style="position: absolute; right: 0">${nls.calc}</button>
+	</div>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<form data-dojo-type="dijit/form/Form" id="vacationCalcForm">
+			<table id="vacationCalc-messages">
+				<tr>
+					<td>
+						<div class="place-messages"><!-- test --></div>
+						<div class="place-errors"><!-- test --></div>
+					</td>
+				</tr>
+			</table>
+			<div data-dojo-type="dojox/mobile/RoundRect">
+				<div data-dojo-type="dojox/mobile/FormLayout"
+					 data-dojo-attach-point="formLayout">
+					<div>
+						<label for="user">${nls.user}</label>
+						<fieldset>
+							<input name="user.id" type="hidden" data-dojo-attach-point="userId" /> 
+							<input name="user.label"
+								   data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.user}'"
+								   data-dojo-attach-point="userLabel">
+						</fieldset>
+					</div>
+					<div>
+						<label for="calcDate">${nls.calcDate}</label>
+						<fieldset>
+							<input name="calcDate"
+								   data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.calcDate}'"
+								   data-dojo-attach-point="calcDate">
+						</fieldset>
+					</div>
+					<div>
+						<label for="balance">${nls.balance}</label>
+						<fieldset>
+							<input name="balance"
+								   data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.balance}'"
+								   data-dojo-attach-point="balance">
+						</fieldset>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedUser, onShow:this.setSelectedUser, onBlur:function(){ return true; }" data-dojo-attach-point="listUserPicker">
+			<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectUser}">
+				<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+					data-dojo-attach-point="listUserPickerOk"></div>
+				<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+					data-dojo-attach-point="listUserPickerCancel"></div>
+			</h1>
+			<div data-dojo-type="dojox/mobile/ScrollableView" selected="true" height="auto" style="min-width:400px">
+				<div data-dojo-type="aplanaHh/mobile/RoundRectStoreList" select="single"
+						data-dojo-mixins="dojox/mobile/FilteredListMixin"
+						data-dojo-attach-point="usersList"
+						data-dojo-props="store: this.loadedStores.users,
+							labelProperty: 'label',
+							placeHolder: '${nls.search}', stateful: false,
+							onCheckStateChanged:this.onCheckUser">
+				</div>
+			</div>
+		</div>
+		<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedCalcDate, onShow:this.setSelectedCalcDate, onBlur:function(){ return true; }" data-dojo-attach-point="calcDatePicker">
+			<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectCalcDate}">
+				<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+					data-dojo-attach-point="calcDatePickerOk"></div>
+				<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+					data-dojo-attach-point="calcDatePickerCancel"></div>
+			</h1>
+			<div data-dojo-type="dojox/mobile/DatePicker" data-dojo-attach-point="calcDateSelector"></div>
+		</div>
+	</div>
+</div>

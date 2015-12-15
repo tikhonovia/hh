@@ -1,0 +1,162 @@
+<div>
+	<div data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="backButton"
+				data-dojo-props="arrow: 'left', target: '${params.back}'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.back}</button>
+		${nls.title}
+	</div>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<form data-dojo-type="dijit/form/Form" id="sickDetailForm">
+			<input type="hidden" name="sickList.version" data-dojo-attach-point="version" value="" />
+			<input type="hidden" name="sickList.type.id" data-dojo-attach-point="type" value="" />
+			<table id="sickDetail-messages">
+				<tr>
+					<td>
+						<div class="place-messages"><!-- test --></div>
+						<div class="place-errors"><!-- test --></div>
+					</td>
+				</tr>
+			</table>
+			<div class="section-title">${nls.common}</div>
+			<div data-dojo-type="dojox/mobile/RoundRect">
+				<div data-dojo-type="dojox/mobile/FormLayout"
+					 data-dojo-attach-point="formLayoutCommon">
+					<div>
+						<label for="id">${nls.id}</label>
+						<fieldset>
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.id}'"
+								   data-dojo-attach-point="id"
+								   name="id">
+						</fieldset>
+					</div>
+					<div>
+						<label for="user">${nls.user}</label>
+						<fieldset>
+							<input name="sickList.user.id" type="hidden" data-dojo-attach-point="userId" /> 
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.user}'"
+								   data-dojo-attach-point="userLabel">
+						</fieldset>
+					</div>
+					<div>
+						<label for="startDate">${nls.startDate}</label>
+						<fieldset>
+							<input name="sickList.startDate" type="hidden" data-dojo-attach-point="startDateId" /> 
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.startDate}'"
+								   data-dojo-attach-point="startDate">
+						</fieldset>
+					</div>
+					<div>
+						<label for="startDate">${nls.presDate}</label>
+						<fieldset>
+							<input name="sickList.presDate" type="hidden" data-dojo-attach-point="presDateId" /> 
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.presDate}'"
+								   data-dojo-attach-point="presDate">
+						</fieldset>
+					</div>
+					<div>
+						<label for="endDate">${nls.endDate}</label>
+						<fieldset>
+							<input name="sickList.endDate" type="hidden" data-dojo-attach-point="endDateId" /> 
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.endDate}'"
+								   data-dojo-attach-point="endDate">
+						</fieldset>
+					</div>
+					<div>
+						<label for="inform">${nls.inform.title}</label>
+						<fieldset>
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="readOnly: true,
+										placeHolder: '${nls.inform.title}'"
+								   data-dojo-attach-point="inform">
+						</fieldset>
+					</div>
+					<div>
+						<label for="informs"></label>
+						<fieldset>
+							<table data-dojo-attach-point="informs">
+							</table>
+						</fieldset>
+					</div>
+					<div>
+						<label for="experience">${nls.comment}</label>
+						<fieldset>
+							<input data-dojo-type="dojox/mobile/TextArea"
+								   data-dojo-props="placeHolder: '${nls.enterComment}', rows: 5"
+								   name="history.comment"
+								   data-dojo-attach-point="comment">
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div data-dojo-type="dojox/mobile/RoundRect">
+				<div data-dojo-type="dojox/mobile/FormLayout"
+					 data-dojo-attach-point="formLayoutButtons">
+					<button type="button" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="buttonSave">${nls.button.save}</button>
+					<button type="button" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="buttonClose">${nls.button.close}</button>
+				</div>
+			</div>
+			<ul data-dojo-type="dojox/mobile/RoundRectList" data-dojo-attach-point="listHistory">
+		        <li data-dojo-type="aplanaHh/mobile/HistoryListItem" label="${nls.history}" data-dojo-attach-point="history"></li>
+			</ul>
+		</form>
+	</div>
+
+	<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedInform, onShow:this.setSelectedInform, onBlur:function(){ return true; }" data-dojo-attach-point="listInformPicker">
+		<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectInform}">
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+				data-dojo-attach-point="listInformPickerOk"></div>
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+				data-dojo-attach-point="listInformPickerCancel"></div>
+		</h1>
+		<div data-dojo-type="dojox/mobile/ScrollableView" selected="true" height="auto" style="min-width:400px">
+			<div data-dojo-type="aplanaHh/mobile/RoundRectStoreList" select="multiple"
+					data-dojo-mixins="dojox/mobile/FilteredListMixin"
+					data-dojo-attach-point="informsList"
+					data-dojo-props="store: this.loadedStores.agreements,
+						labelProperty: 'label',
+						placeHolder: '${nls.search}', stateful: false,
+						onCheckStateChanged:this.onCheckInform">
+			</div>
+		</div>
+	</div>
+	<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedStartDate, onShow:this.setSelectedStartDate, onBlur:function(){ return true; }" data-dojo-attach-point="startDatePicker">
+		<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectDate}">
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+				data-dojo-attach-point="startDatePickerOk"></div>
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+				data-dojo-attach-point="startDatePickerCancel"></div>
+		</h1>
+		<div data-dojo-type="dojox/mobile/DatePicker" data-dojo-attach-point="startDateSelector"></div>
+	</div>
+	<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedPresDate, onShow:this.setSelectedPresDate, onBlur:function(){ return true; }" data-dojo-attach-point="presDatePicker">
+		<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectDate}">
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+				data-dojo-attach-point="presDatePickerOk"></div>
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+				data-dojo-attach-point="presDatePickerCancel"></div>
+		</h1>
+		<div data-dojo-type="dojox/mobile/DatePicker" data-dojo-attach-point="presDateSelector"></div>
+	</div>
+	<div style="z-index:10000;" data-dojo-type="dojox/mobile/Opener" data-dojo-props="onHide:this.getSelectedEndDate, onShow:this.setSelectedEndDate, onBlur:function(){ return true; }" data-dojo-attach-point="endDatePicker">
+		<h1 data-dojo-type="dojox/mobile/Heading" label="${nls.selectDate}">
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.ok}" class="mblColorBlue" style="position:absolute;width:45px;right:0;"
+				data-dojo-attach-point="endDatePickerOk"></div>
+			<div data-dojo-type="dojox/mobile/ToolBarButton" label="${nls.cancel}" class="mblColorBlue" style="position:absolute;width:45px;left:0;"
+				data-dojo-attach-point="endDatePickerCancel"></div>
+		</h1>
+		<div data-dojo-type="dojox/mobile/DatePicker" data-dojo-attach-point="endDateSelector"></div>
+	</div>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="mblBackground">
+	<div id="vacationMenu" data-dojo-type="dojox/mobile/View">
+		<div data-dojo-type="dojox/mobile/Heading"
+			 data-dojo-props="fixed: 'top', back: '${nls.back}', href:'#menu', hrefTarget:'#menu'">
+			 <!-- 
+			<button data-dojo-type="dojox/mobile/ToolBarButton"
+					data-dojo-attach-point="refUsersBackButton"
+					data-dojo-props="arrow: 'left', back: true"
+					style="position: absolute; left: 0"
+					class="backButton">${nls.back}</button>
+			  -->
+		</div>
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<span class="logo"><img class="logo-small" src="images/aplana.png" /></span>
+			<span class="heading-title">${nls.title}</span>
+		</div>
+		<table id="vacationMenu-messages">
+			<tr>
+				<td>
+					<div class="place-messages"><!-- test --></div>
+					<div class="place-errors"><!-- test --></div>
+				</td>
+			</tr>
+		</table>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuAddVacation" data-dojo-props="target: 'vacationDetail'" label="${nls.vacation.add}" description="${nls.vacation.addDescription}"></li>
+	    </ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuVacationCalcItem" data-dojo-props="target:'vacationCalc'" label="${nls.vacation.calc}" description="${nls.vacation.calcDescription}"></li>
+	    </ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/VacationsListItem" label="${nls.vacation.forApprove}" data-dojo-attach-point="forApprove" backView="vacationMenu"></li>
+		</ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/VacationsListItem" label="${nls.vacation.myApproved}" data-dojo-attach-point="myApproved" backView="vacationMenu" withUser="false" allowDelete="true"></li>
+		</ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+	        <li data-dojo-type="aplanaHh/mobile/VacationsListItem" label="${nls.vacation.myForApprove}" data-dojo-attach-point="myForApprove" backView="vacationMenu" withUser="false" allowDelete="true"></li>
+		</ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList" data-dojo-attach-point="listDraft">
+	        <li data-dojo-type="aplanaHh/mobile/VacationsListItem" label="${nls.vacation.myDraft}" data-dojo-attach-point="myDraft" backView="vacationMenu" withUser="false" allowDelete="true"></li>
+		</ul>
+		<ul data-dojo-type="dojox/mobile/RoundRectList" data-dojo-attach-point="listRejected">
+	        <li data-dojo-type="aplanaHh/mobile/VacationsListItem" label="${nls.vacation.myRejected}" data-dojo-attach-point="myRejected" backView="vacationMenu" withUser="false" allowDelete="true"></li>
+		</ul>
+    </div>
+</div>

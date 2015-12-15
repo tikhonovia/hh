@@ -1,0 +1,253 @@
+html, body.gid_body, div#gid_content, .gid_local {
+	height: 100%;
+	margin: 0px;
+}
+
+.gid,.gid_map {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%
+}
+
+.gid_logo {
+	background: url('../images/logo.png') no-repeat center;
+	display: block;
+	width: 150px;
+	height: 40px;
+}
+
+.gid-left-panel-group {
+    position: fixed;
+    margin-left: 15px;
+    margin-top: 15px;
+    padding: 2px;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 320px;
+}
+
+.gid-bottom-menu {
+    position: fixed;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    padding: 2px;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+	background: none repeat scroll 0 0 rgba(51, 51, 51, 0.95);
+}
+
+.gid-bottom-menu .login-button, .gid-bottom-menu .private-button, .gid-bottom-menu .test-button {
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
+}
+
+.panel-gid-search {
+	background: none repeat scroll 0 0 rgba(51, 51, 51, 0.95);
+}
+
+.panel-gid-search .container {
+	width: 300px;
+}
+
+.panel-gid-indonesia, .panel-gid-result-search {
+	background: none repeat scroll 0 0 rgba(51, 51, 51, 0.95);
+	max-height: calc(100% - 50px);
+}
+
+.panel-gid-indonesia .container, .panel-gid-result-search .container {
+	width: 300px;
+}
+
+.panel-gid-indonesia .panel-title, .panel-gid-result-search .panel-title {
+	color: white;
+}
+
+.panel-heading span.close-panel
+{
+    margin-top: -26px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+.clickable {
+	color: RGB(140,135,130);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.object-status span {
+	padding: 5px 6px;
+}
+
+.object-status .wifi {
+	background: url('../images/wifi.png') no-repeat center;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.object-status .mastercard {
+	background: url('../images/mastercard.png') no-repeat center;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.object-status .visa {
+	background: url('../images/visa.png') no-repeat center;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+}
+
+.gid-dialogs {
+	display: none;
+}
+
+.gid-login-popover {
+	width: 300px;
+}
+
+.popover-danger {
+	color: red;
+	font-weight: bold;
+	background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+label.checkbox-inline {
+	color: white;
+}
+
+body, .form-control, .btn {
+	font-size: 11px;
+	line-height: 15px;
+}
+
+.form-control {
+	height: 29px;
+}
+
+.panel-body {
+	padding: 5px;
+}
+
+/*
+.toggle.btn  {
+	min-height: 29px;
+}
+*/
+
+span.waiting {
+	background: url('../../images/ajax-loader.gif') no-repeat center;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+
+.list-categories, #gid-search-groups>.list-group {
+	min-height: 10px;
+	max-height: 500px;
+	overflow-y: auto;
+}
+
+.list-search-items {
+	min-height: 10px;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.list-group-item.top-level-category-item, .list-group-item.second-level-category-item, .list-group-item.object-item {
+	padding: 5px 10px;
+}
+
+#gid-banner-in-category img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gid-banner-on-map {
+    position: fixed;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 2px;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+	background: none repeat scroll 0 0 rgba(51, 51, 51, 0.95);
+}
+
+.gid-service-loyalty {
+	background: url('../images/loyalty.gif') no-repeat center;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+}
+
+.gid-service-text {
+	font-weight: bold;
+}
+
+.top-level-category-filters .container {
+	width: 290px;
+}
+
+.top-level-category-filters .slider.slider-horizontal {
+    height: 20px;
+    width: 100%;
+}
+
+.panel-category-filter-1, .panel-category-filter-2, .panel-category-filter-3, .panel-category-filter-4 {
+ 	background: none repeat scroll 0 0 rgba(51, 51, 51, 0.95);
+    position: fixed;
+    margin-left: 340px;
+    margin-top: 200px;
+    padding: 2px;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 320px;
+}
+
+.panel-category-filter-1 .panel-body, .panel-category-filter-2 .panel-body, .panel-category-filter-3 .panel-body, .panel-category-filter-4 .panel-body {
+	background: white;
+}
+
+.gid-marker-on-map .leaflet-popup-tip,
+.gid-marker-on-map .leaflet-popup-content-wrapper,
+.gid-marker-on-map .panel {
+    background: rgba(51, 51, 51, 0.95); /*#e93434;*/
+    color: #ffffff;
+}
+
+.gid-marker-on-map .leaflet-popup-close-button {
+	display: none;
+}
+
+.gid-marker-on-map .leaflet-popup-content {
+	margin: 4px 5px;
+}
+
+.gid-marker-on-map .panel {
+	margin-bottom: 2px;
+}
+
+.gid-marker-on-map .leaflet-popup-content-wrapper,.gid-marker-on-map .leaflet-popup-content
+ {
+   -webkit-border-radius: 0 !important;
+   -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+ }
+ 
+ .list-search-group-object, .list-search-group-category {
+ 	font-size: 18px;
+ 	font-weight: 500;
+    line-height: 1.1;
+ }

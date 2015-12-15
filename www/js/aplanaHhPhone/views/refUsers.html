@@ -1,0 +1,28 @@
+<div class="mblBackground">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="refUsersBackButton"
+				data-dojo-props="arrow: 'left', target: 'menu'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.back}</button>
+		${nls.title}
+	</div>
+	<table id="refUsers-messages">
+		<tr>
+			<td>
+				<div class="place-messages"><!-- test --></div>
+				<div class="place-errors"><!-- test --></div>
+			</td>
+		</tr>
+	</table>
+	<div data-dojo-type="aplanaHh/mobile/EdgeToEdgeStoreList"
+			data-dojo-mixins="dojox/mobile/FilteredListMixin"
+			data-dojo-attach-point="refUsersList"
+			id="refUsersList"
+			data-dojo-props="store: this.loadedStores.users,
+				labelProperty: 'label',
+				itemRenderer: this.UserItem,
+				placeHolder: '${nls.search}', stateful: false">
+	</div>
+</div>

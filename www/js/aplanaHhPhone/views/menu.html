@@ -1,0 +1,54 @@
+<div class="mblBackground">
+<div id="menu" data-dojo-type="dojox.mobile.View">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="logoff"
+				data-dojo-props="arrow: 'left'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.logoff}</button>
+	</div>
+	<div data-dojo-type="dojox/mobile/RoundRect">
+		<span class="logo"><img class="logo-small" src="images/aplana.png" /></span>
+		<span class="heading-title">${nls.title}</span>
+	</div>
+	<table id="menu-messages">
+		<tr>
+			<td>
+				<div class="place-messages"><!-- test --></div>
+				<div class="place-errors"><!-- test --></div>
+			</td>
+		</tr>
+	</table>
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="aplanaHh/mobile/NotificationListItem" label="${nls.notification.title}" data-dojo-attach-point="notification"></li>
+	</ul>
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="aplanaHh/mobile/ManagerListItem" label="${nls.manager.title}" data-dojo-attach-point="manager">
+			<button data-dojo-type="dojox/mobile/Button" class="manager-call hidden" data-dojo-attach-point="managerCall">${nls.call}</button>
+		</li>
+	</ul>
+	<!-- 
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="dojox/mobile/ListItem" id="menuVacationMyItem" data-dojo-props="moveTo:'vacationMy'">${nls.vacation.my}</li>
+        <li data-dojo-type="dojox/mobile/ListItem" id="menuVacationToAgreementItem" data-dojo-props="moveTo:'vacationToAgreement'">${nls.vacation.toAgreement}</li>
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="moveTo:'vacationAdd'">${nls.vacation.add}</li>
+        <li data-dojo-type="dojox/mobile/ListItem" id="menuVacationCalcItem" data-dojo-props="moveTo:'vacationCalc'">${nls.vacation.calc}</li>
+    </ul>
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="moveTo:'sickMy'">${nls.sick.my}</li>
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="moveTo:'sickInformMe'">${nls.sick.informMe}</li>
+        <li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="moveTo:'sickAdd'">${nls.sick.add}</li>
+    </ul>
+	 -->
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuVacationsItem" data-dojo-props="clicable: true, target: 'vacationMenu'" label="${nls.vacation.my}" description="${nls.vacation.myDescription}" data-dojo-attach-point="menuVacationsItem"></li>
+    </ul>
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuSicksItem" data-dojo-props="clicable: true, target: 'sickMenu'" label="${nls.sick.my}" description="${nls.sick.myDescription}"></li>
+    </ul>
+	<ul data-dojo-type="dojox/mobile/RoundRectList">
+        <li data-dojo-type="aplanaHh/mobile/DescriptionListItem" id="menuRefUsersItem" data-dojo-props="clicable: true, target: 'refUsers'" label="${nls.ref.users}" description="${nls.ref.usersDescription}"></li>
+    </ul>
+   </div>
+</div>

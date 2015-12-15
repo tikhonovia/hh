@@ -1,0 +1,272 @@
+<div>
+	<div data-dojo-type="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="backButton"
+				data-dojo-props="arrow: 'left', target: 'refUsers'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.back}</button>
+		${nls.title}
+	</div>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<table id="refUserDetail-messages">
+			<tr>
+				<td>
+					<div class="place-messages"><!-- test --></div>
+					<div class="place-errors"><!-- test --></div>
+				</td>
+			</tr>
+		</table>
+		<!-- <div class="section-title">${nls.personalInfo}</div> -->
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<div data-dojo-type="dojox/mobile/FormLayout"
+				 data-dojo-attach-point="formLayout">
+				<div>
+					<label for="fullName">${nls.fullName}</label>
+					<fieldset>
+						<input id="fullName" name="fullName"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.fullName}'"
+							   data-dojo-attach-point="fullName">
+					</fieldset>
+				</div>
+				<div>
+					<label for="position">${nls.position}</label>
+					<fieldset>
+						<input id="position" name="position"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.position}'"
+							   data-dojo-attach-point="position">
+					</fieldset>
+				</div>
+				<div>
+					<label for="department">${nls.department}</label>
+					<fieldset>
+						<input id="department" name="department"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.department}'"
+							   data-dojo-attach-point="department">
+					</fieldset>
+				</div>
+				<!-- 
+				<div>
+					<label for="manager">${nls.manager}</label>
+					<fieldset>
+						<input id="manager" name="manager"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.manager}'"
+							   data-dojo-attach-point="manager">
+					</fieldset>
+				</div>
+				 -->
+				<div>
+					<label for="mobilePhone">${nls.mobilePhone}</label>
+					<fieldset>
+						<input id="mobilePhone" name="mobilePhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.mobilePhone}'"
+							   data-dojo-attach-point="mobilePhone">
+					</fieldset>
+				</div>
+				<!-- 
+				<div>
+					<label for="homePhone">${nls.homePhone}</label>
+					<fieldset>
+						<input id="homePhone" name="homePhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.homePhone}'"
+							   data-dojo-attach-point="homePhone">
+					</fieldset>
+				</div>
+				 -->
+				<div>
+					<label for="workPhone">${nls.workPhone}</label>
+					<fieldset>
+						<input id="workPhone" name="workPhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.workPhone}'"
+							   data-dojo-attach-point="workPhone">
+					</fieldset>
+				</div>
+				<div>
+					<label for="eMail">${nls.eMail}</label>
+					<fieldset>
+						<input id="eMail" name="eMail"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.eMail}'"
+							   data-dojo-attach-point="eMail">
+					</fieldset>
+				</div>
+				<!-- 
+				<div>
+					<label for="birthDay">${nls.birthDay}</label>
+					<fieldset>
+						<input id="birthDay" name="birthDay"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.birthDay}'"
+							   data-dojo-attach-point="birthDay">
+					</fieldset>
+				</div>
+				<div>
+					<label for="sex">${nls.sex.label}</label>
+					<fieldset>
+						<input id="sex" name="sex"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.sex.label}'"
+							   data-dojo-attach-point="sex">
+					</fieldset>
+				</div>
+				 -->
+			</div>
+		</div>
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<div data-dojo-type="dojox/mobile/FormLayout"
+				 data-dojo-attach-point="formLayoutButtons">
+				<button type="button" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="buttonCall">${nls.button.call}</button>
+			</div>
+		</div>
+		<!-- 
+		<div class="section-title">${nls.workInfo}</div>
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<div data-dojo-type="dojox/mobile/FormLayout"
+				 data-dojo-attach-point="formLayoutWorkInfo">
+				<div>
+					<label for="userStatus">${nls.userStatus}</label>
+					<fieldset>
+						<input id="userStatus" name="userStatus"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.userStatus}'"
+							   data-dojo-attach-point="userStatus">
+					</fieldset>
+				</div>
+				<div>
+					<label for="tabNo">${nls.tabNo}</label>
+					<fieldset>
+						<input id="tabNo" name="tabNo"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.tabNo}'"
+							   data-dojo-attach-point="tabNo">
+					</fieldset>
+				</div>
+				<div>
+					<label for="workBegin">${nls.workBegin}</label>
+					<fieldset>
+						<input id="workBegin" name="workBegin"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.workBegin}'"
+							   data-dojo-attach-point="workBegin">
+					</fieldset>
+				</div>
+				<div>
+					<label for="firstWorkBegin">${nls.firstWorkBegin}</label>
+					<fieldset>
+						<input id="firstWorkBegin" name="firstWorkBegin"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.firstWorkBegin}'"
+							   data-dojo-attach-point="firstWorkBegin">
+					</fieldset>
+				</div>
+				<div>
+					<label for="dismissDate">${nls.dismissDate}</label>
+					<fieldset>
+						<input id="dismissDate" name="dismissDate"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.dismissDate}'"
+							   data-dojo-attach-point="dismissDate">
+					</fieldset>
+				</div>
+				<div>
+					<label for="position">${nls.position}</label>
+					<fieldset>
+						<input id="position" name="position"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.position}'"
+							   data-dojo-attach-point="position">
+					</fieldset>
+				</div>
+				<div>
+					<label for="positionBegin">${nls.positionBegin}</label>
+					<fieldset>
+						<input id="positionBegin" name="positionBegin"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.positionBegin}'"
+							   data-dojo-attach-point="positionBegin">
+					</fieldset>
+				</div>
+				<div>
+					<label for="balanceDays">${nls.balanceDays}</label>
+					<fieldset>
+						<input id="balanceDays" name="balanceDays"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.balanceDays}'"
+							   data-dojo-attach-point="balanceDays">
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div class="section-title">${nls.contactInfo}</div>
+		<div data-dojo-type="dojox/mobile/RoundRect">
+			<div data-dojo-type="dojox/mobile/FormLayout"
+				 data-dojo-attach-point="formLayoutContact">
+				<div>
+					<label for="mobilePhone">${nls.mobilePhone}</label>
+					<fieldset>
+						<input id="mobilePhone" name="mobilePhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.mobilePhone}'"
+							   data-dojo-attach-point="mobilePhone">
+					</fieldset>
+				</div>
+				<div>
+					<label for="homePhone">${nls.homePhone}</label>
+					<fieldset>
+						<input id="homePhone" name="homePhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.homePhone}'"
+							   data-dojo-attach-point="homePhone">
+					</fieldset>
+				</div>
+				<div>
+					<label for="workPhone">${nls.workPhone}</label>
+					<fieldset>
+						<input id="workPhone" name="workPhone"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.workPhone}'"
+							   data-dojo-attach-point="workPhone">
+					</fieldset>
+				</div>
+				<div>
+					<label for="eMail">${nls.eMail}</label>
+					<fieldset>
+						<input id="eMail" name="eMail"
+							   data-dojo-type="dojox/mobile/TextArea"
+							   data-dojo-props="readOnly: true,
+									placeHolder: '${nls.eMail}'"
+							   data-dojo-attach-point="eMail">
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		 -->
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="mblBackground">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		${nls.login.header}
+	</div>
+	<div data-dojo-type="dojox/mobile/ScrollableView">
+		<form data-dojo-type="dijit/form/Form" name="loginForm" id="loginForm" data-dojo-attach-point="loginForm">
+			<div data-dojo-type="dojox/mobile/RoundRect">
+				<span class="logo"><img class="logo-large" src="images/aplana-large.png" /></span>
+			</div>
+			<div data-dojo-type="dojox/mobile/RoundRect">
+				<table id="login-messages">
+					<tr>
+						<td>
+							<div class="place-messages"><!-- test --></div>
+							<div class="place-errors"><!-- test --></div>
+						</td>
+					</tr>
+				</table>
+				<div data-dojo-type="dojox/mobile/FormLayout">
+					<div>
+						<label>${nls.login.username}</label>
+						<fieldset>
+							<input type=text data-dojo-type="dojox/mobile/TextBox" name="j_username" id="loginUsernameField" required="true" data-dojo-attach-point="loginUsername" />
+						</fieldset>
+					</div>
+					<div>
+						<label>${nls.login.password}</label>
+						<fieldset>
+							<input type=password name="j_password" data-dojo-type="dojox/mobile/TextBox" id="loginPasswordField" required="true" data-dojo-attach-point="loginPassword" />
+						</fieldset>
+					</div>
+					<div>
+						<label>&nbsp;</label>
+						<fieldset>
+							<button type="button" data-dojo-type="dojox/mobile/Button" data-dojo-attach-point="loginButton">${nls.login.button}</button>
+						</fieldset>
+					</div>
+					<input type=hidden name="_spring_security_remember_me" value="on" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
