@@ -4,6 +4,7 @@
     <description>Аплана. Отпуска и больничные</description>
     <author email="Igor.Tikhonov@aplana.com" href="https://hh.aplana.com">Igor Tikhonov</author>
     <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/network" />
     <preference name="orientation" value="portrait" /> <!-- portrait -->
     <preference name="fullscreen" value="false" />
     <preference name="target-device" value="universal" />
