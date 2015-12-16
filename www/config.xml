@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.aplana.hh2" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>ОиБ 2</name>
+    <name>ОиБ 3</name>
     <description>Аплана. Отпуска и больничные</description>
     <author email="Igor.Tikhonov@aplana.com" href="https://hh.aplana.com">Igor Tikhonov</author>
     <feature name="http://api.phonegap.com/1.0/device" />
