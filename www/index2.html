@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <script>dojoConfig = {async: true,parseOnLoad: false};</script>
+	<script type="text/javascript" src="js/dojox/mobile/deviceTheme.js"></script>
+	<script type="text/javascript" src="js/dojo/dojo.js"></script>
+	<script type="text/javascript">
+		require([
+					"dojox/mobile/parser",
+					"dojox/mobile/compat",
+					"dojo/domReady!",
+					"dojox/mobile/View",
+					"dojox/mobile/Heading",
+					"dojox/mobile/RoundRectList",
+					"dojox/mobile/ListItem",
+					"dojox/mobile/Switch",
+					"dojox/mobile/RoundRectCategory"
+				], function (parser) {
+					// now parse the page for widgets
+					parser.parse();
+				});
+		</script>
+        <title>Hello World</title>
+    </head>
+	<body style="visibility:hidden;">
+		<div data-dojo-props="selected:true" data-dojo-type="dojox/mobile/View" id="settings">
+			<h1 data-dojo-type="dojox/mobile/Heading">"Homepage" View</h1>
+			<ul data-dojo-type="dojox/mobile/RoundRectList">
+				<li data-dojo-props="icon:'images/icon-1.png'" data-dojo-type="dojox/mobile/ListItem">Airplane Mode
+					<div data-dojo-type="dojox/mobile/Switch"></div>
+				</li>
+				<li data-dojo-props="icon:'images/icon-2.png', rightText:'mac'" data-dojo-type="dojox/mobile/ListItem">Wi-Fi</li>
+				<li data-dojo-props="icon:'images/icon-3.png', rightText:'AcmePhone', moveTo:'general'" data-dojo-type="dojox/mobile/ListItem">Carrier</li>
+			</ul>
+		</div>
+		<div data-dojo-type="dojox/mobile/View" id="general">
+			<h1 data-dojo-props="back:'Settings', moveTo:'settings'" data-dojo-type="dojox/mobile/Heading">General View</h1>
+			<ul data-dojo-type="dojox/mobile/RoundRectList">
+				<li data-dojo-props="moveTo:'about'" data-dojo-type="dojox/mobile/ListItem">About</li>
+				<li data-dojo-props="rightText:'2h 40m', moveTo:'about'" data-dojo-type="dojox/mobile/ListItem">Usage</li>
+			</ul>
+		</div>
+		<div data-dojo-type="dojox/mobile/View" id="about">
+			<h1 data-dojo-props="back:'General', moveTo:'general'" data-dojo-type="dojox/mobile/Heading">About</h1>
+			<h2 data-dojo-type="dojox/mobile/RoundRectCategory">Generic Mobile Device</h2>
+			<ul data-dojo-type="dojox/mobile/RoundRectList">
+				<li data-dojo-props="rightText:'AcmePhone'" data-dojo-type="dojox/mobile/ListItem">    Network</li>
+				<li data-dojo-props="rightText:'AcmePhone'" data-dojo-type="dojox/mobile/ListItem">Line</li>
+				<li data-dojo-props="rightText:'1024'" data-dojo-type="dojox/mobile/ListItem">Songs</li>
+				<li data-dojo-props="rightText:'10'" data-dojo-type="dojox/mobile/ListItem">Videos</li>
+			</ul>
+		</div>
+	</body>
+</html>
