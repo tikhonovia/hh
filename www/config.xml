@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.aplana.hh2" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>ОиБ 3</name>
+<widget id="com.aplana.hh" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>ОиБ</name>
     <description>Аплана. Отпуска и больничные</description>
     <author email="Igor.Tikhonov@aplana.com" href="https://hh.aplana.com">Igor Tikhonov</author>
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -11,6 +11,8 @@
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="android-installLocation" value="auto" />
     <preference name="EnableViewportScale" value="true" />
+    <platform name="ios" />
+    <platform name="android" />
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
@@ -36,6 +38,7 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
-    <plugin name="cordova-plugin-whitelist" version="1" />
+    <plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
     <access origin="tel:*" launch-external="yes"/>
+    <allow-intent href="*" />
 </widget>
