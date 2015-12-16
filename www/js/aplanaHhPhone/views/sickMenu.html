@@ -1,13 +1,13 @@
 <div class="mblBackground">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+		<button data-dojo-type="dojox/mobile/ToolBarButton"
+				data-dojo-attach-point="refUsersBackButton"
+				data-dojo-props="arrow: 'left', target: 'menu', transitionDir: -1, moveTo: 'menu'"
+				style="position: absolute; left: 0"
+				class="backButton">${nls.back}</button>
+	</div>
 	<div data-dojo-type="dojox/mobile/ScrollableView">
-		<div data-dojo-type="dojox/mobile/Heading"
-			 data-dojo-props="fixed: 'top'">
-			<button data-dojo-type="dojox/mobile/ToolBarButton"
-					data-dojo-attach-point="refUsersBackButton"
-					data-dojo-props="arrow: 'left', target: 'menu', transitionDir: -1, moveTo: 'menu'"
-					style="position: absolute; left: 0"
-					class="backButton">${nls.back}</button>
-		</div>
 		<div data-dojo-type="dojox/mobile/RoundRect">
 			<span class="logo"><img class="logo-small" src="images/aplana.png" /></span>
 			<span class="heading-title">${nls.title}</span>

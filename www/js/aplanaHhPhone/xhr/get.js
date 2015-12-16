@@ -55,6 +55,7 @@ define("aplanaHh/xhr/get",["dojo/request/xhr","aplanaHh/dialogs/progress","aplan
 	 			if(message.startsWith("Unable to load")) {
 	 				message = "Недоступен сервер. Проверьте подключение к интернету";
 	 			}
+	 			message+=". URL: "+xhrArgs.url+", error: "+error
 				messages.addErrors(xhrArgs.viewId,message);
 	 			if(onError){
 	 				onError(error);
