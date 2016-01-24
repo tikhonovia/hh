@@ -42,6 +42,9 @@ define("aplanaHh/xhr/post",["dojo/request/xhr","aplanaHh/dialogs/progress","apla
 		 				else if(data.errors){
 		 					messages.addErrors(xhrArgs.viewId,data.errors);
 		 				}
+		 				if(xhrArgs.onShowError){
+		 					xhrArgs.onShowError();
+		 				}
 	 				}
 	 				if(data.onError && data.onError.authAjax===true) {
  		 				if(!xhrArgs.domNode){

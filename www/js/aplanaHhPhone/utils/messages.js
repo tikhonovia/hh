@@ -1,8 +1,8 @@
 // we use 'define' and not 'require' to workaround Dojo build system
 // limitation that prevents from making of this file a layer if it
 // using 'require'
-define("aplanaHh/utils/messages",["dojo/query","dojo/dom","dojo","dojo/html"],
-	function(query,dom,dojo,dojo_html){
+define("aplanaHh/utils/messages",["dojo/query","dojo/dom","dojo","dojo/html","dojo/window"],
+	function(query,dom,dojo,dojo_html,win){
 		var funcs={};
 		 
 		// Работа с сообщениями
@@ -67,6 +67,10 @@ define("aplanaHh/utils/messages",["dojo/query","dojo/dom","dojo","dojo/html"],
 		            dojo_html.set(div, e+"</div>");
 		            dojo.removeClass( div, "hidden" );
 				});
+				//console.debug(m);
+				//console.debug(win);
+				//win.scrollIntoView(m);
+				//window.scrollTo(0, 0);
 		    }
 		  }
 		};

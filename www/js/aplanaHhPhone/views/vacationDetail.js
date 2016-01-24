@@ -21,6 +21,9 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 				aggrsCache=this.app.views[viewId].aggrsCache;
 				aggrsCacheKey=this.app.views[viewId].aggrsCacheKey;
 				calcWorkdaysUri=this.app.views[viewId].calcWorkdaysUri;
+				// Поиск по вхождению, а не началу
+				var filterBox = this.aggrsList.getFilterBox();
+				filterBox.set("queryExpr", "*${0}*");
 				// Открытие выбора даты начала
 				on(view.startDate,"click",function(){
 					view.startDatePicker.show(view.startDate.domNode,['above-centered','below-centered']);
@@ -246,6 +249,9 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 		                    });
 			 			}
 			 	    },
+			 		onShowError: function(){
+			 			view.scrollableView.scrollTo({x:0,y:0});
+			 		},
 			 	    error: function(error){
 			 			console.debug(error);
 			 	    }});
@@ -281,6 +287,8 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 				}
 				utilFields.fieldCheck(view.vacationDetailType1,vacation,"vacationList.type.id",1);
 				utilFields.fieldCheck(view.vacationDetailType2,vacation,"vacationList.type.id",2);
+				// Видимость поля ID
+				utilFields.fieldVisible(view.divId,(vacation.vacationList && vacation.vacationList.id));
 				// Заполняем значения
 				utilFields.setFieldByObjectName(view.id,vacation,"vacationList.id");
 				utilFields.setFieldByObjectName(view.version,vacation,"vacationList.version");

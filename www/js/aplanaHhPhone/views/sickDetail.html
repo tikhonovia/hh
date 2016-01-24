@@ -7,7 +7,7 @@
 				class="backButton">${nls.back}</button>
 		${nls.title}
 	</div>
-	<div data-dojo-type="dojox/mobile/ScrollableView">
+	<div data-dojo-type="dojox/mobile/ScrollableView" data-dojo-attach-point="scrollableView">
 		<form data-dojo-type="dijit/form/Form" id="sickDetailForm">
 			<input type="hidden" name="sickList.version" data-dojo-attach-point="version" value="" />
 			<input type="hidden" name="sickList.type.id" data-dojo-attach-point="type" value="" />
@@ -23,7 +23,7 @@
 			<div data-dojo-type="dojox/mobile/RoundRect">
 				<div data-dojo-type="dojox/mobile/FormLayout"
 					 data-dojo-attach-point="formLayoutCommon">
-					<div>
+					<div data-dojo-attach-point="divId">
 						<label for="id">${nls.id}</label>
 						<fieldset>
 							<input data-dojo-type="dojox/mobile/TextArea"

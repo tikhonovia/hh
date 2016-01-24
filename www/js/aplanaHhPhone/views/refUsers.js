@@ -27,6 +27,9 @@ define(["dojo/_base/declare", "dojo/has",
 				uri=this.app.views[viewId].uri;
 				cache=this.app.views[viewId].cache;
 				cacheKey=this.app.views[viewId].cacheKey;
+				// Поиск по вхождению, а не началу
+				var filterBox = this.refUsersList.getFilterBox();
+				filterBox.set("queryExpr", "*${0}*");
 			},
 			beforeActivate: function() {
 				var view=this;

@@ -18,6 +18,9 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 				informsUri=this.app.views[viewId].informsUri;
 				informsCache=this.app.views[viewId].informsCache;
 				informsCacheKey=this.app.views[viewId].informsCacheKey;
+				// Поиск по вхождению, а не началу
+				var filterBox = this.informsList.getFilterBox();
+				filterBox.set("queryExpr", "*${0}*");
 				// Открытие выбора даты начала
 				on(view.startDate,"click",function(){
 					view.startDatePicker.show(view.startDate.domNode,['above-centered','below-centered']);
@@ -233,7 +236,6 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 			postForm: function(uri,obj,progress,domNode) {
 				obj=obj||{};
 				var json=dojo.mixin(utilJson.formToJsonObject("sickDetailForm"),obj);
-				console.debug(json);
 			 	xhrPost({uri:uri,
 			 		jsonObject: json,
 			 		progress: progress,
@@ -245,7 +247,10 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 		                        target: "sickMenu"
 		                    });
 			 			}
-			 	    },
+			 		},
+			 		onShowError: function(){
+			 			view.scrollableView.scrollTo({x:0,y:0});
+			 		},
 			 	    error: function(error){
 			 			console.debug(error);
 			 	    }});
@@ -265,10 +270,10 @@ define(["dojo/_base/array", "dojo/_base/lang", "dojo/has", "dojo/when",
 			fillData : function(sick) {
 				sick=sick||{};
 				sick.additionals=sick.additionals||{};
-				//
-				console.debug(sick);
 				// Разрешения
 				view.applyGrants(sick.additionals);
+				// Видимость поля ID
+				utilFields.fieldVisible(view.divId,(sick.sickList && sick.sickList.id));
 				// Заполняем значения
 				utilFields.setFieldByObjectName(view.id,sick,"sickList.id");
 				utilFields.setFieldByObjectName(view.version,sick,"sickList.version");
